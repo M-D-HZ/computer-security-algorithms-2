@@ -1,0 +1,18 @@
+{
+    "encryption": {
+        "methods": ["aes256cbc", "salsa20", "rsa-oaep"],
+        "keyid": "../implementation/preshared_key.txt",
+        "public_key_path": "../implementation/cns_client_pub.pem",
+        "private_key_path": "keys/cns_flaskr_pri.pem"
+    },
+    "mac": {
+        "methods": ["sha1", "sha512hmac"],
+        "keyid": "../implementation/preshared_key.txt"
+    },
+    "sessions": {
+        "path": "sessions",
+        "private_key_path": "keys/cns_flaskr_pri.pem",
+        "cert_path": "keys/cns_flaskr.crt"
+    },
+    "orders": [0, 1]
+}

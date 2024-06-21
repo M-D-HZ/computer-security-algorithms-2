@@ -1,0 +1,6 @@
+FROM ghcr.io/computer-and-network-security/cns_flaskr:2023.1-mac
+
+WORKDIR /flaskr
+
+COPY requirements.txt /flaskr/requirements.txt
+RUN pip install -r requirements.txt

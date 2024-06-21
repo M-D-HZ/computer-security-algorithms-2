@@ -1,0 +1,5 @@
+2.2) 1.2) openssl req -x509 -new -nodes -key {PrivateKey} -sha1 -days 365 -out certificate.pem
+2.2) 2.1) openssl req -new -key {PrivateKey} -out {Filename} -sha1 -out cns_flaskr.csr
+2.2) 2.3) openssl x509 -req -in {certificate_request} -CA {ca_certificate} -CAkey {ca_private_key} -out {certificate} -days 365 -sha1
+to check certificate info:
+openssl {certificateType} -in {filename} -text > {output_filename}

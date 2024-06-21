@@ -1,0 +1,186 @@
+Total grade: 5.606
+Rounded: 6.000
+Report remarks: no discussion of how RSA is used in encrypting http traffic,no info on attack and mitigation measures,
+Report - Key Generation: 1.000
+Report - RSA: 1.000
+Report - OAEP: 1.000
+Report - Encryption: 0.000
+Report - CA: 0.500
+Report - CSR: 0.500
+Report - Cert: 0.500
+Report - Cert Fields: 3.000
+Report - Message Flow: 1.000
+Report - Sessions: 0.500
+Report - Attack?: 0.000
+Report - Extra: first section: nan
+Report - Total %: 39.300
+Code - CA: 1.000
+Code - Handshake: 0.190
+Code - Keys: 0.750
+Code - RSA: 0.929
+Code - ClientPOSTEncry: 0.000
+Code - ServerPOSTEncry: 0.000
+Code - Total %: 46.400
+
+..........FF...FFFFFFFF.FFFFFFFFFFF....FF.............F..FFFF
+======================================================================
+FAIL: test_aes_used_for_traffic_by_content (test.task2.test_client_handshake.ClientHandshakeTest)
+----------------------------------------------------------------------
+AssertionError: 25 != 32 : Check if the traffic is encrypted with AES. - Wrong content length.
+
+======================================================================
+FAIL: test_aes_used_for_traffic_by_header (test.task2.test_client_handshake.ClientHandshakeTest)
+----------------------------------------------------------------------
+AssertionError: 'Content-Encoding' not found in Headers[(b'Host', b'cns_flaskr'), (b'User-Agent', b'Mozilla/5.0 (X11; Linux aarch64; rv:109.0) Gecko/20100101 Firefox/116.0'), (b'Accept', b'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8'), (b'Accept-Language', b'en-US,en;q=0.5'), (b'Accept-Encoding', b'gzip, deflate'), (b'Content-Type', b'application/x-www-form-urlencoded'), (b'Content-Length', b'25'), (b'Origin', b'http://cns_flaskr'), (b'Connection', b'keep-alive'), (b'Referer', b'http://cns_flaskr/login'), (b'Upgrade-Insecure-Requests', b'1')] : Check if the traffic is encrypted with AES. - No Content-Encoding header.
+
+======================================================================
+FAIL: test_client_ack_rsa_encrypted_header (test.task2.test_client_handshake.ClientHandshakeTest)
+----------------------------------------------------------------------
+AssertionError: 'Content-Encoding' not found in Headers[(b'Nonce', b'05c6551b0d78de5d3f3e'), (b'content-length', b'384')] : Check if the client ack was encrypted with RSA. - No Content-Encoding header.
+
+======================================================================
+FAIL: test_client_can_handle_server_response (test.task2.test_client_handshake.ClientHandshakeTest)
+----------------------------------------------------------------------
+AssertionError: b'Server side - Request:\n\'Encryption\'\nT[628 chars]\'\n' != b'<!doctype html>\n<html lang=en>\n<title>R[149 chars]k.\n' : Check if the client can handle the server response. - Wrong decryption.
+
+======================================================================
+FAIL: test_client_session_content (test.task2.test_client_handshake.ClientHandshakeTest)
+----------------------------------------------------------------------
+AssertionError: False is not true : Check if the client's session file contains the correct content. - Not present at given path.
+
+======================================================================
+FAIL: test_client_session_present (test.task2.test_client_handshake.ClientHandshakeTest)
+----------------------------------------------------------------------
+AssertionError: False is not true : Check if the client's session file was created - Not present at given path.
+
+======================================================================
+FAIL: test_correct_keyid_for_traffic (test.task2.test_client_handshake.ClientHandshakeTest)
+----------------------------------------------------------------------
+AssertionError: False is not true : Check if the traffic uses the session id as the keyid - Session not present.
+
+======================================================================
+FAIL: test_correct_session_end (test.task2.test_client_handshake.ClientHandshakeTest)
+----------------------------------------------------------------------
+AssertionError: False is not true : Check if the used session end is 60 seconds. - Session not present.
+
+======================================================================
+FAIL: test_hmac_used_for_traffic (test.task2.test_client_handshake.ClientHandshakeTest)
+----------------------------------------------------------------------
+AssertionError: 'Authorization' not found in Headers[(b'Host', b'cns_flaskr'), (b'User-Agent', b'Mozilla/5.0 (X11; Linux aarch64; rv:109.0) Gecko/20100101 Firefox/116.0'), (b'Accept', b'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8'), (b'Accept-Language', b'en-US,en;q=0.5'), (b'Accept-Encoding', b'gzip, deflate'), (b'Content-Type', b'application/x-www-form-urlencoded'), (b'Content-Length', b'25'), (b'Origin', b'http://cns_flaskr'), (b'Connection', b'keep-alive'), (b'Referer', b'http://cns_flaskr/login'), (b'Upgrade-Insecure-Requests', b'1')] : Check if the traffic is authenticated with HMAC. - No Authorization header.
+
+======================================================================
+FAIL: test_right_session_id (test.task2.test_client_handshake.ClientHandshakeTest)
+----------------------------------------------------------------------
+AssertionError: False is not true : Check if the used session id is the one provided by the server. - Session not present.
+
+======================================================================
+FAIL: test_server_ack_aes_encrypted_header (test.task2.test_client_handshake.ClientHandshakeTest)
+----------------------------------------------------------------------
+AssertionError: 'Content-Encoding' not found in Headers[(b'content-length', b'640')] : Check if the server ack was encrypted with AES. - No Content-Encoding header.
+
+======================================================================
+FAIL: test_server_ack_hmac_authenticated (test.task2.test_client_handshake.ClientHandshakeTest)
+----------------------------------------------------------------------
+AssertionError: 'Authorization' not found in Headers[(b'content-length', b'640')] : Check if the server ack was authenticated with HMAC. - No Authorization header.
+
+======================================================================
+FAIL: test_server_response_aes_encrypted_content (test.task2.test_client_handshake.ClientHandshakeTest)
+----------------------------------------------------------------------
+AssertionError: 15 != 0 : Check if the server response was encrypted with AES. - Wrong content length.
+
+======================================================================
+FAIL: test_server_response_aes_encrypted_header (test.task2.test_client_handshake.ClientHandshakeTest)
+----------------------------------------------------------------------
+AssertionError: 'Content-Encoding' not found in Headers[(b'content-length', b'655')] : Check if the server response was encrypted with AES. - No Content-Encoding header.
+
+======================================================================
+FAIL: test_server_response_hmac_authenticated (test.task2.test_client_handshake.ClientHandshakeTest)
+----------------------------------------------------------------------
+AssertionError: 'Authorization' not found in Headers[(b'content-length', b'655')] : Check if the server response was authenticated with HMAC. - No Authorization header.
+
+======================================================================
+FAIL: test_server_session_content (test.task2.test_client_handshake.ClientHandshakeTest)
+----------------------------------------------------------------------
+AssertionError: False is not true : Check if the server's session file contains the correct content. - Not present at given path.
+
+======================================================================
+FAIL: test_server_session_present (test.task2.test_client_handshake.ClientHandshakeTest)
+----------------------------------------------------------------------
+AssertionError: False is not true : Check if the server's session file was created - Not present at given path.
+
+======================================================================
+FAIL: test_content_encoding_content (test.task2.test_encryption_post_client.ClientPOSTEncryptionTest)
+----------------------------------------------------------------------
+AssertionError: 'Content-Encoding' not found in Headers[(b'Host', b'cns_flaskr'), (b'User-Agent', b'Mozilla/5.0 (X11; Linux aarch64; rv:109.0) Gecko/20100101 Firefox/116.0'), (b'Accept', b'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8'), (b'Accept-Language', b'en-US,en;q=0.5'), (b'Accept-Encoding', b'gzip, deflate'), (b'Content-Type', b'application/x-www-form-urlencoded'), (b'Content-Length', b'25'), (b'Origin', b'http://cns_flaskr'), (b'Connection', b'keep-alive'), (b'Referer', b'http://cns_flaskr/login'), (b'Upgrade-Insecure-Requests', b'1')]
+Testing if the Content-Encoding header content contains rsa. - Not present
+
+======================================================================
+FAIL: test_encryption_header_content (test.task2.test_encryption_post_client.ClientPOSTEncryptionTest)
+----------------------------------------------------------------------
+AssertionError: 'Encryption' not found in Headers[(b'Host', b'cns_flaskr'), (b'User-Agent', b'Mozilla/5.0 (X11; Linux aarch64; rv:109.0) Gecko/20100101 Firefox/116.0'), (b'Accept', b'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8'), (b'Accept-Language', b'en-US,en;q=0.5'), (b'Accept-Encoding', b'gzip, deflate'), (b'Content-Type', b'application/x-www-form-urlencoded'), (b'Content-Length', b'25'), (b'Origin', b'http://cns_flaskr'), (b'Connection', b'keep-alive'), (b'Referer', b'http://cns_flaskr/login'), (b'Upgrade-Insecure-Requests', b'1')]
+Testing if the Encryption header contains necessary information. - Not present
+
+======================================================================
+FAIL: test_request_encryption (test.task2.test_encryption_post_client.ClientPOSTEncryptionTest)
+----------------------------------------------------------------------
+AssertionError: b'username=u1&password=1234' == b'username=u1&password=1234'
+Testing if the message content is encrypted.
+
+======================================================================
+FAIL: test_response_decryption (test.task2.test_encryption_post_client.ClientPOSTEncryptionTest)
+----------------------------------------------------------------------
+AssertionError: b'<!doctype html>\n<html lang=en>\n<title>Redirecting...</title>\n<h1>Redirecting...</h1>\n<p>You should be redirected automatically to the target URL: <a href="/">/</a>. If not, click the link.\n' == b'<!doctype html>\n<html lang=en>\n<title>Redirecting...</title>\n<h1>Redirecting...</h1>\n<p>You should be redirected automatically to the target URL: <a href="/">/</a>. If not, click the link.\n'
+The response content was not decrypted, or not encrypted in the first place.
+
+======================================================================
+FAIL: test_keys_generation_512 (test.task2.test_keys.KeysTest)
+----------------------------------------------------------------------
+AssertionError: number of bits not allowed
+
+During handling of the above exception, another exception occurred:
+
+AssertionError: Testing if the keys are generated correctly for 512 # bits.Error: number of bits not allowed
+
+======================================================================
+FAIL: test_keys_generation_800 (test.task2.test_keys.KeysTest)
+----------------------------------------------------------------------
+AssertionError: number of bits not allowed
+
+During handling of the above exception, another exception occurred:
+
+AssertionError: Testing if the keys are generated correctly for 800 # bits.Error: number of bits not allowed
+
+======================================================================
+FAIL: test_encrypt_long_nonce (test.task2.test_rsa.RSATest)
+----------------------------------------------------------------------
+AssertionError: b"}\x85\xaeba\tb\xac\x8b\xbffw\x1d\x1b\x9e[336 chars]\xb5" != b'\x1a\xcb2\xaew\x08\xc6\x9b\xc9\x8dI\xb3F[318 chars]90@?'
+Testing encryption with a too long nonce.
+
+======================================================================
+FAIL: test_content_encoding_content (test.task2.test_encryption_post_server.ServerPOSTEncryptionTest)
+----------------------------------------------------------------------
+AssertionError: 'Content-Encoding' not found in Headers[(b'Server', b'Werkzeug/2.3.7 Python/3.10.8'), (b'Date', b'Sat, 04 Nov 2023 20:38:36 GMT'), (b'Content-Type', b'text/html; charset=utf-8'), (b'Content-Length', b'189'), (b'Location', b'/'), (b'Vary', b'Cookie'), (b'Set-Cookie', b'session=eyJfZmxhc2hlcyI6W3siIHQiOlsibWVzc2FnZSIsIllvdSB3ZXJlIGxvZ2dlZCBpbiBhcyB1MSJdfV0sImxvZ2dlZF9pbiI6InUxIn0.ZUarzA.go6dk2ouTUJKcGCqV-53bW02p40; HttpOnly; Path=/'), (b'Connection', b'close')]
+Testing if the Content-Encoding header content is correct. - Not present
+
+======================================================================
+FAIL: test_encryption_header_content (test.task2.test_encryption_post_server.ServerPOSTEncryptionTest)
+----------------------------------------------------------------------
+AssertionError: 'Encryption' not found in Headers[(b'Server', b'Werkzeug/2.3.7 Python/3.10.8'), (b'Date', b'Sat, 04 Nov 2023 20:38:36 GMT'), (b'Content-Type', b'text/html; charset=utf-8'), (b'Content-Length', b'189'), (b'Location', b'/'), (b'Vary', b'Cookie'), (b'Set-Cookie', b'session=eyJfZmxhc2hlcyI6W3siIHQiOlsibWVzc2FnZSIsIllvdSB3ZXJlIGxvZ2dlZCBpbiBhcyB1MSJdfV0sImxvZ2dlZF9pbiI6InUxIn0.ZUarzA.go6dk2ouTUJKcGCqV-53bW02p40; HttpOnly; Path=/'), (b'Connection', b'close')]
+Testing if the Encryption header contains necessary information. - Not present
+
+======================================================================
+FAIL: test_request_decryption (test.task2.test_encryption_post_server.ServerPOSTEncryptionTest)
+----------------------------------------------------------------------
+AssertionError: b'username=u1&password=1234' == b'username=u1&password=1234'
+The request content was not decrypted, or not encrypted in the first place.
+
+======================================================================
+FAIL: test_response_encryption (test.task2.test_encryption_post_server.ServerPOSTEncryptionTest)
+----------------------------------------------------------------------
+AssertionError: b'<!doctype html>\n<html lang=en>\n<title>Redirecting...</title>\n<h1>Redirecting...</h1>\n<p>You should be redirected automatically to the target URL: <a href="/">/</a>. If not, click the link.\n' == b'<!doctype html>\n<html lang=en>\n<title>Redirecting...</title>\n<h1>Redirecting...</h1>\n<p>You should be redirected automatically to the target URL: <a href="/">/</a>. If not, click the link.\n'
+The response content was not encrypted.
+
+----------------------------------------------------------------------
+
+FAILED (failures=28)
+
