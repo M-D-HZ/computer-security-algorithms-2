@@ -1,4 +1,4 @@
-# *Continuation of computer security algorithms*
+*Continuation of computer security algorithms*
 # Setup
 There are three containers; Client, Flaskr, that are connected by a bridge network named `cns`
   * **Client**: a container with Firefox running on it. To access Firefox from host, connect via `http://localhost:5800`.
