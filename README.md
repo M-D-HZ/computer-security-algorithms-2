@@ -1,14 +1,7 @@
-[![Review Assignment Due Date](https://classroom.github.com/assets/deadline-readme-button-24ddc0f5d75046c5622901739e7c5dd533143b0c8e959d652212380cedb1ea36.svg)](https://classroom.github.com/a/_vfACfZs)
-# Group
-<-- You are to fill this section with the names of your group members.  E.g. Group-< nr > : < member names >-->
-
 # Setup
-There are three containers; Client, Flaskr and Student, that are connected by a bridge network named `cns`
+There are three containers; Client, Flaskr, that are connected by a bridge network named `cns`
   * **Client**: a container with Firefox running on it. To access Firefox from host, connect via `http://localhost:5800`.
   * **Flaskr**: is hosting an HTTP server.
-* **Student**: this is the eavesdropper (man-in-the-middle) container.
-
-**(Make sure you do not edit the provided function definitions and file structure!)**
 
 # How to run
 1. Log into container repository,
